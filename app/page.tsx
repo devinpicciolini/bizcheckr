@@ -566,127 +566,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* API Status Section */}
-      <section id="status" className="py-24 px-6 lg:px-8 border-t border-white/[0.08]">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">API Status</h2>
-          <p className="text-center text-gray-400 mb-12">Real-time system health and performance</p>
-
-          <div className="space-y-4">
-            {/* Overall Status */}
-            <div className="rounded-2xl border border-green-500/30 bg-gradient-to-br from-green-500/10 to-white/[0.02] backdrop-blur-xl p-8">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-4">
-                  <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse" />
-                  <div>
-                    <h3 className="text-xl font-semibold">All Systems Operational</h3>
-                    <p className="text-sm text-gray-400 mt-1">All services running normally</p>
-                  </div>
-                </div>
-                <div className="text-right">
-                  <div className="text-3xl font-bold text-green-500">99.9%</div>
-                  <p className="text-xs text-gray-400">Uptime</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Service Status */}
-            <div className="grid md:grid-cols-2 gap-4">
-              <div className="rounded-xl border border-white/[0.08] bg-white/[0.02] backdrop-blur-xl p-6">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 rounded-full bg-green-500" />
-                    <h4 className="font-semibold">API Endpoint</h4>
-                  </div>
-                  <span className="text-xs text-green-500 font-medium">Operational</span>
-                </div>
-                <div className="space-y-2 text-sm">
-                  <div className="flex justify-between text-gray-400">
-                    <span>Response Time</span>
-                    <span className="text-white">~500ms</span>
-                  </div>
-                  <div className="flex justify-between text-gray-400">
-                    <span>Success Rate</span>
-                    <span className="text-white">99.95%</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="rounded-xl border border-white/[0.08] bg-white/[0.02] backdrop-blur-xl p-6">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 rounded-full bg-green-500" />
-                    <h4 className="font-semibold">AI Models</h4>
-                  </div>
-                  <span className="text-xs text-green-500 font-medium">Operational</span>
-                </div>
-                <div className="space-y-2 text-sm">
-                  <div className="flex justify-between text-gray-400">
-                    <span>GPT-4o mini</span>
-                    <span className="text-white">Online</span>
-                  </div>
-                  <div className="flex justify-between text-gray-400">
-                    <span>Avg. Latency</span>
-                    <span className="text-white">~300ms</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="rounded-xl border border-white/[0.08] bg-white/[0.02] backdrop-blur-xl p-6">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 rounded-full bg-green-500" />
-                    <h4 className="font-semibold">Rate Limiting</h4>
-                  </div>
-                  <span className="text-xs text-green-500 font-medium">Operational</span>
-                </div>
-                <div className="space-y-2 text-sm">
-                  <div className="flex justify-between text-gray-400">
-                    <span>Max Req/Min</span>
-                    <span className="text-white">50</span>
-                  </div>
-                  <div className="flex justify-between text-gray-400">
-                    <span>Status</span>
-                    <span className="text-white">Active</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="rounded-xl border border-white/[0.08] bg-white/[0.02] backdrop-blur-xl p-6">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 rounded-full bg-green-500" />
-                    <h4 className="font-semibold">Authentication</h4>
-                  </div>
-                  <span className="text-xs text-green-500 font-medium">Operational</span>
-                </div>
-                <div className="space-y-2 text-sm">
-                  <div className="flex justify-between text-gray-400">
-                    <span>API Keys</span>
-                    <span className="text-white">Valid</span>
-                  </div>
-                  <div className="flex justify-between text-gray-400">
-                    <span>Security</span>
-                    <span className="text-white">Active</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Recent Incidents */}
-            <div className="rounded-xl border border-white/[0.08] bg-white/[0.02] backdrop-blur-xl p-6">
-              <h4 className="font-semibold mb-4">Recent Incidents</h4>
-              <div className="flex items-center gap-3 text-sm text-gray-400">
-                <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <span>No incidents reported in the last 30 days</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* API Documentation */}
       <section id="api" className="py-24 px-6 lg:px-8 border-t border-white/[0.08]">
         <div className="max-w-4xl mx-auto">
@@ -791,7 +670,7 @@ export default function Home() {
           <div className="flex justify-center items-center space-x-8 mb-8">
             <a href="#" className="text-sm text-gray-400 hover:text-white transition-colors">Home</a>
             <a href="#pricing" className="text-sm text-gray-400 hover:text-white transition-colors">Pricing</a>
-            <a href="#status" className="text-sm text-gray-400 hover:text-white transition-colors">Status</a>
+            <Link href="/status" className="text-sm text-gray-400 hover:text-white transition-colors">Status</Link>
             <a href="#api" className="text-sm text-gray-400 hover:text-white transition-colors">API</a>
           </div>
           <div className="text-center text-sm text-gray-500">
