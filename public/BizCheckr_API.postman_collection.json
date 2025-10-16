@@ -1,0 +1,301 @@
+{
+  "info": {
+    "name": "BizCheckr API",
+    "description": "AI-powered business description validator API. Validates if your business description includes WHAT you do, WHO you serve, and WHERE you operate.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "bizcheckr"
+  },
+  "item": [
+    {
+      "name": "Validate Business Description",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "pm.test(\"Response has score\", function () {",
+              "    var jsonData = pm.response.json();",
+              "    pm.expect(jsonData).to.have.property('score');",
+              "});",
+              "",
+              "pm.test(\"Response has validation flags\", function () {",
+              "    var jsonData = pm.response.json();",
+              "    pm.expect(jsonData).to.have.property('hasWhat');",
+              "    pm.expect(jsonData).to.have.property('hasWhom');",
+              "    pm.expect(jsonData).to.have.property('hasWhere');",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "apikey",
+          "apikey": [
+            {
+              "key": "value",
+              "value": "{{apiKey}}",
+              "type": "string"
+            },
+            {
+              "key": "key",
+              "value": "X-API-Key",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "X-API-Key",
+            "value": "{{apiKey}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"description\": \"We provide web development services for small businesses in Austin, Texas\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://www.bizcheckr.dev/api/validate-business",
+          "protocol": "https",
+          "host": [
+            "www",
+            "bizcheckr",
+            "dev"
+          ],
+          "path": [
+            "api",
+            "validate-business"
+          ]
+        },
+        "description": "Validates a business description and returns a completeness score (0-100) along with analysis of what's present (WHAT, WHO, WHERE) and suggestions for improvement."
+      },
+      "response": [
+        {
+          "name": "Complete Description (100%)",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"description\": \"We provide web development services for small businesses in Austin, Texas\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://www.bizcheckr.dev/api/validate-business",
+              "protocol": "https",
+              "host": [
+                "www",
+                "bizcheckr",
+                "dev"
+              ],
+              "path": [
+                "api",
+                "validate-business"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"score\": 100,\n  \"hasWhat\": true,\n  \"hasWhom\": true,\n  \"hasWhere\": true,\n  \"missing\": [],\n  \"analysis\": {\n    \"what\": \"web development services\",\n    \"whom\": \"small businesses\",\n    \"where\": \"Austin, Texas\"\n  },\n  \"suggestions\": []\n}"
+        },
+        {
+          "name": "Incomplete Description (33%)",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"description\": \"We build websites\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://www.bizcheckr.dev/api/validate-business",
+              "protocol": "https",
+              "host": [
+                "www",
+                "bizcheckr",
+                "dev"
+              ],
+              "path": [
+                "api",
+                "validate-business"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"score\": 33,\n  \"hasWhat\": true,\n  \"hasWhom\": false,\n  \"hasWhere\": false,\n  \"missing\": [\"whom\", \"where\"],\n  \"analysis\": {\n    \"what\": \"website building\",\n    \"whom\": null,\n    \"where\": null\n  },\n  \"suggestions\": [\n    \"Please specify WHO your target customers are (e.g., 'small businesses', 'homeowners', 'tech startups')\",\n    \"Please specify WHERE you operate (e.g., 'Austin, Texas', 'nationwide', 'San Francisco Bay Area')\"\n  ]\n}"
+        },
+        {
+          "name": "Rate Limit Exceeded",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"description\": \"Test description\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://www.bizcheckr.dev/api/validate-business",
+              "protocol": "https",
+              "host": [
+                "www",
+                "bizcheckr",
+                "dev"
+              ],
+              "path": [
+                "api",
+                "validate-business"
+              ]
+            }
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "X-RateLimit-Limit",
+              "value": "50"
+            },
+            {
+              "key": "X-RateLimit-Remaining",
+              "value": "0"
+            },
+            {
+              "key": "Retry-After",
+              "value": "45"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"error\": \"Too many requests. Please try again later.\",\n  \"retryAfter\": 45\n}"
+        },
+        {
+          "name": "Invalid Request - Empty Description",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"description\": \"\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://www.bizcheckr.dev/api/validate-business",
+              "protocol": "https",
+              "host": [
+                "www",
+                "bizcheckr",
+                "dev"
+              ],
+              "path": [
+                "api",
+                "validate-business"
+              ]
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"error\": \"Business description cannot be empty\"\n}"
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://www.bizcheckr.dev",
+      "type": "string"
+    },
+    {
+      "key": "apiKey",
+      "value": "YOUR_API_KEY_HERE",
+      "type": "string"
+    }
+  ]
+}
