@@ -396,10 +396,6 @@ export default function Home() {
                   <span className="text-sm text-gray-300">Community support</span>
                 </div>
               </div>
-
-              <button className="w-full bg-white/[0.06] hover:bg-white/[0.12] text-white font-medium text-sm py-3 px-6 rounded-xl transition-all border border-white/[0.08]">
-                Get Started
-              </button>
             </div>
 
             {/* Pro Tier */}
@@ -449,10 +445,6 @@ export default function Home() {
                   <span className="text-sm text-gray-300">Usage analytics</span>
                 </div>
               </div>
-
-              <button className="w-full bg-white hover:bg-gray-100 text-black font-medium text-sm py-3 px-6 rounded-xl transition-all">
-                Upgrade to Pro
-              </button>
             </div>
 
             {/* Enterprise Tier */}
@@ -504,10 +496,6 @@ export default function Home() {
                   <span className="text-sm text-gray-300">SLA guarantee</span>
                 </div>
               </div>
-
-              <button className="w-full bg-white/[0.06] hover:bg-white/[0.12] text-white font-medium text-sm py-3 px-6 rounded-xl transition-all border border-white/[0.08]">
-                Contact Sales
-              </button>
             </div>
           </div>
         </div>
