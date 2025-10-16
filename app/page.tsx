@@ -64,7 +64,7 @@ export default function Home() {
       <div className="fixed inset-0 bg-gradient-to-br from-blue-950/10 via-transparent to-purple-950/10 pointer-events-none" />
 
       {/* Announcement Banner */}
-      <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 text-white py-2 px-4 text-center text-sm font-medium fixed w-full z-50 top-0">
+      <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 text-white py-3 px-4 text-center text-sm font-medium fixed w-full z-50 top-0">
         <div className="flex items-center justify-center gap-2">
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -74,7 +74,7 @@ export default function Home() {
       </div>
 
       {/* Navbar */}
-      <nav className="border-b border-white/[0.08] backdrop-blur-xl bg-black/40 fixed w-full z-50 mt-8">
+      <nav className="border-b border-white/[0.08] backdrop-blur-xl bg-black/40 fixed w-full z-50 mt-10">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
