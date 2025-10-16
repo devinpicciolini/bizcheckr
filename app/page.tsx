@@ -75,6 +75,7 @@ export default function Home() {
 
             <div className="hidden md:flex items-center space-x-8">
               <a href="#features" className="text-sm text-gray-400 hover:text-white transition-colors">Features</a>
+              <a href="#pricing" className="text-sm text-gray-400 hover:text-white transition-colors">Pricing</a>
               <a href="#api" className="text-sm text-gray-400 hover:text-white transition-colors">API</a>
             </div>
 
@@ -91,6 +92,7 @@ export default function Home() {
           {mobileMenuOpen && (
             <div className="md:hidden py-4 space-y-3 border-t border-white/[0.08]">
               <a href="#features" className="block text-sm text-gray-400 hover:text-white transition-colors">Features</a>
+              <a href="#pricing" className="block text-sm text-gray-400 hover:text-white transition-colors">Pricing</a>
               <a href="#api" className="block text-sm text-gray-400 hover:text-white transition-colors">API</a>
             </div>
           )}
@@ -348,6 +350,169 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Pricing Section */}
+      <section id="pricing" className="py-24 px-6 lg:px-8 border-t border-white/[0.08]">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">Simple, Transparent Pricing</h2>
+          <p className="text-center text-gray-400 mb-16 max-w-2xl mx-auto">
+            Choose the plan that fits your needs. All plans include full API access.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {/* Free Tier */}
+            <div className="rounded-2xl border border-white/[0.08] bg-white/[0.02] backdrop-blur-xl p-8 hover:border-white/[0.12] transition-all">
+              <div className="mb-6">
+                <h3 className="text-2xl font-bold mb-2">Starter</h3>
+                <div className="flex items-baseline gap-2 mb-2">
+                  <span className="text-5xl font-bold">$0</span>
+                  <span className="text-gray-400">/month</span>
+                </div>
+                <p className="text-sm text-gray-400">Perfect for testing and small projects</p>
+              </div>
+
+              <div className="space-y-4 mb-8">
+                <div className="flex items-start gap-3">
+                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-sm text-gray-300">10,000 requests/month</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-sm text-gray-300">50 requests/minute</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-sm text-gray-300">Full API access</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-sm text-gray-300">Community support</span>
+                </div>
+              </div>
+
+              <button className="w-full bg-white/[0.06] hover:bg-white/[0.12] text-white font-medium text-sm py-3 px-6 rounded-xl transition-all border border-white/[0.08]">
+                Get Started
+              </button>
+            </div>
+
+            {/* Pro Tier */}
+            <div className="rounded-2xl border border-blue-500/30 bg-gradient-to-b from-blue-500/10 to-white/[0.02] backdrop-blur-xl p-8 hover:border-blue-500/50 transition-all relative">
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-blue-500 to-purple-500 text-white text-xs font-bold px-4 py-1 rounded-full">
+                POPULAR
+              </div>
+
+              <div className="mb-6">
+                <h3 className="text-2xl font-bold mb-2">Professional</h3>
+                <div className="flex items-baseline gap-2 mb-2">
+                  <span className="text-5xl font-bold">$20</span>
+                  <span className="text-gray-400">/month</span>
+                </div>
+                <p className="text-sm text-gray-400">For growing businesses and startups</p>
+              </div>
+
+              <div className="space-y-4 mb-8">
+                <div className="flex items-start gap-3">
+                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-sm text-gray-300">100,000 requests/month</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-sm text-gray-300">200 requests/minute</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-sm text-gray-300">Full API access</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-sm text-gray-300">Priority email support</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-sm text-gray-300">Usage analytics</span>
+                </div>
+              </div>
+
+              <button className="w-full bg-white hover:bg-gray-100 text-black font-medium text-sm py-3 px-6 rounded-xl transition-all">
+                Upgrade to Pro
+              </button>
+            </div>
+
+            {/* Enterprise Tier */}
+            <div className="rounded-2xl border border-white/[0.08] bg-white/[0.02] backdrop-blur-xl p-8 hover:border-white/[0.12] transition-all">
+              <div className="mb-6">
+                <h3 className="text-2xl font-bold mb-2">Enterprise</h3>
+                <div className="flex items-baseline gap-2 mb-2">
+                  <span className="text-5xl font-bold">$100</span>
+                  <span className="text-gray-400">/month</span>
+                </div>
+                <p className="text-sm text-gray-400">For large-scale applications</p>
+              </div>
+
+              <div className="space-y-4 mb-8">
+                <div className="flex items-start gap-3">
+                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-sm text-gray-300">1,000,000 requests/month</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-sm text-gray-300">500 requests/minute</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-sm text-gray-300">Full API access</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-sm text-gray-300">24/7 priority support</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-sm text-gray-300">Custom integrations</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-sm text-gray-300">SLA guarantee</span>
+                </div>
+              </div>
+
+              <button className="w-full bg-white/[0.06] hover:bg-white/[0.12] text-white font-medium text-sm py-3 px-6 rounded-xl transition-all border border-white/[0.08]">
+                Contact Sales
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Benefits Section */}
       <section id="features" className="py-24 px-6 lg:px-8 border-t border-white/[0.08]">
         <div className="max-w-7xl mx-auto">
@@ -506,6 +671,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="flex justify-center items-center space-x-8 mb-8">
             <a href="#" className="text-sm text-gray-400 hover:text-white transition-colors">Home</a>
+            <a href="#pricing" className="text-sm text-gray-400 hover:text-white transition-colors">Pricing</a>
             <a href="#api" className="text-sm text-gray-400 hover:text-white transition-colors">API</a>
           </div>
           <div className="text-center text-sm text-gray-500">
